@@ -1,0 +1,288 @@
+DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> basta kay letter ni</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+/* light blue */
+/* Example: #06ffa5, #00d4ff light blue theme */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', cursive;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        /* ENVELOPE */
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+/* light blue */
+/* Example: #06ffa5, #00d4ff light blue */
+            margin: 0 auto;
+            cursor: pointer;
+            transition: transform 0.5s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .envelope:hover {
+            transform: scale(1.05);
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-top: 100px solid #ff5c8a;
+            transform-origin: top;
+            transition: transform 0.5s;
+            z-index: 3;
+        }
+
+        .envelope.open .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .heart-seal {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            z-index: 4;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* LETTER */
+        .letter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 280px;
+            height: 180px;
+            background: #fff0f3;
+            padding: 20px;
+            transform: translateY(0);
+            transition: transform 0.8s 0.3s;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            overflow-y: auto;
+        }
+
+        .envelope.open .letter {
+            transform: translateY(-120px);
+        }
+
+        .letter h2 {
+            color: #ff006e;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .letter p {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .signature {
+            margin-top: 15px;
+            text-align: right;
+            color: #ff006e;
+            font-weight: bold;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        /* FLOATING HEARTS */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 6s infinite linear;
+            opacity: 0;
+        }
+
+        /* BUTTON */
+        .open-btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 18px;
+            background: #fff;
+            color: #ff006e;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.1);
+            background: #ff006e;
+            color: #fff;
+        }
+
+        /* ANIMATIONS */
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 1;
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 400px) {
+            .envelope { width: 280px; height: 180px; }
+            .envelope-flap { 
+                border-left: 140px solid transparent;
+                border-right: 140px solid transparent;
+                border-top: 90px solid #ff5c8a;
+            }
+            .letter { width: 260px; height: 160px; }
+            .letter p { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="blue hearts" id="blue hearts"></div>
+    
+    <div class="container">
+        <h1 style="color:blue; margin-bottom:20px; text-shadow:2px 2px 4px rgba(0,0,0,0.3);">
+            letter for you 💌
+        </h1>
+        
+        <div class="envelope" id="envelope">
+            <div class="envelope-flap"></div>
+            <div class="heart-seal">💖</div>
+            <div class="letter">
+                <h2>happy monthsarry,</h2>
+                <p>
+                     
+                    
+                     hi love, happy 5th monthsarry. i just want to say i'm happy i got to know you. i'm grateful and thankful at the same time because i was given someone as beautiful as you.
+
+ lovee sorry sa tanan nabuhat nako. bisag unsa pako ka buluyagon, ginasabot gyapon ko nimo. ug padayun lang a pagsabot permi kay sabton sad tika permi.
+              
+      
+                    even if we're already at the most boring stage of our relationship, we still chose to stay. despite all the challenges, you still understand me. we've had a lot of misunderstandings but we didn't let them win. let's just keep going, love, and always trust that we'll get to the exciting part - when we finally get to meet. 
+                    let's always understand each other, okay? and if there's any misunderstanding, we should talk about it so we can fix it.
+
+even if we're already at the most boring stage of our relationship, we still chose to stay. despite all the challenges, you still understand me. we've had a lot of misunderstandings but we didn't let them win. let's just keep going, love, and always trust that we'll get to the exciting part - when we finally get to meet
+ 
+happy 5th monthsarry, love. iloveyouuuusm mwa
+                </p>
+                <div class="signature">
+                    forever yours,<br>
+                     harvey💕
+                </div>
+            </div>
+        </div>
+        
+        <button class="open-btn" id="openBtn">Open Letter 💌</button>
+    </div>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        const openBtn = document.getElementById('openBtn');
+        const heartsContainer = document.getElementById('blue hearts');
+        let isOpen = false;
+
+        // OPEN LETTER FUNCTION
+        function openLetter() {
+            if (!isOpen) {
+                envelope.classList.add('open');
+                openBtn.innerHTML = 'Close Letter 💌';
+                createHearts();
+                isOpen = true;
+            } else {
+                envelope.classList.remove('open');
+                openBtn.innerHTML = 'Open Letter 💌';
+                isOpen = false;
+            }
+        }
+
+        envelope.addEventListener('click', openLetter);
+        openBtn.addEventListener('click', openLetter);
+
+        // FLOATING HEARTS
+        function createHearts() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = 'mikhaela';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+                    heartsContainer.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 6000);
+                }, i * 200);
+            }
+        }
+
+        // AUTO CREATE HEARTS EVERY 3 SECONDS
+        setInterval(() => {
+            if (isOpen) createHearts();
+        }, 3000);
+
+        // TYPEWRITER EFFECT - BONUS
+        function typeWriter() {
+            const text = document.querySelector('.letter p');
+            const originalText = text.innerHTML;
+            text.innerHTML = '';
+            let i = 0;
+            
+            function typing() {
+                if (i < originalText.length) {
+                    text.innerHTML += originalText.charAt(i);
+                    i++;
+                    setTimeout(typing, 30);
+                }
+            }
+            
+            if (isOpen) setTimeout(typing, 800);
+        }
+
+        openBtn.addEventListener('click', typeWriter);
+    </script>
+</body>
+  </html>
